@@ -7,10 +7,13 @@
 
 #ifndef BMS_H
 #define BMS_H
+#define MAX_CELL_CHARGE 72000 //20mA * 3600s
+#define TOTAL_CHARGE MAX_CELL_CHARGE * N_OF_CELLS * N_OF_PACKS
 
 #include "ltc.h"
 #include "constants.h"
 #include "stdlib.h"
+
 
 typedef struct BMS_struct {
 
@@ -34,6 +37,11 @@ typedef struct BMS_struct {
 
 	//AIR
 	uint8_t AIR;
+	
+	//SOC
+	float current_total_charge; //Accumulator
+	float soc_ocv_initial;
+	
 }BMS_struct;
 
 typedef enum{
