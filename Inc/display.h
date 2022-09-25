@@ -1,12 +1,12 @@
 /*
- * nextion_functions.h
+ * display.h
  *
  *  Created on: 13 de ago de 2019
  *      Author: Rodolfo Lessa
  */
 
-#ifndef NEXTION_FUNCTIONS_H_
-#define NEXTION_FUNCTIONS_H_
+#ifndef DISPLAY_H_
+#define DISPLAY_H_
 
 #include "bms.h"
 
@@ -20,11 +20,9 @@
 #define N_PAGE6 6
 #define N_PAGE7 7
 
-uint8_t actual_page;
-
 void display_init();
 void uart3MessageReceived(BMS_struct *BMS);
 uint8_t nexSetPageError(BMS_struct *BMS);
 void display_show(BMS_struct *BMS);
 
-#endif /* NEXTION_FUNCTIONS_H_ */
+#endif /* DISPLAY_H_ */
